@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Order details table shown in emails.
  *
@@ -15,76 +16,175 @@
  * @version 3.7.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-$text_align = is_rtl() ? 'right' : 'left';
 
-do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text, $email ); ?>
+?>
 
-<h2>
-	<?php
-	if ( $sent_to_admin ) {
-		$before = '<a class="link" href="' . esc_url( $order->get_edit_order_url() ) . '">';
-		$after  = '</a>';
-	} else {
-		$before = '';
-		$after  = '';
-	}
-	/* translators: %s: Order ID. */
-	echo wp_kses_post( $before . sprintf( __( '[Order #%s]', 'woocommerce' ) . $after . ' (<time datetime="%s">%s</time>)', $order->get_order_number(), $order->get_date_created()->format( 'c' ), wc_format_datetime( $order->get_date_created() ) ) );
-	?>
-</h2>
 
-<div style="margin-bottom: 40px;">
-	<table class="td" cellspacing="0" cellpadding="6" style="width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;" border="1">
-		<thead>
-			<tr>
-				<th class="td" scope="col" style="text-align:<?php echo esc_attr( $text_align ); ?>;"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-				<th class="td" scope="col" style="text-align:<?php echo esc_attr( $text_align ); ?>;"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
-				<th class="td" scope="col" style="text-align:<?php echo esc_attr( $text_align ); ?>;"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php
-			echo wc_get_email_order_items( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				$order,
-				array(
-					'show_sku'      => $sent_to_admin,
-					'show_image'    => false,
-					'image_size'    => array( 32, 32 ),
-					'plain_text'    => $plain_text,
-					'sent_to_admin' => $sent_to_admin,
-				)
-			);
-			?>
-		</tbody>
-		<tfoot>
-			<?php
-			$item_totals = $order->get_order_item_totals();
+<?php
+if ($sent_to_admin) {
+	$before = '<a class="link" href="' . esc_url($order->get_edit_order_url()) . '">';
+	$after  = '</a>';
+} else {
+	$before = '';
+	$after  = '';
+}
 
-			if ( $item_totals ) {
-				$i = 0;
-				foreach ( $item_totals as $total ) {
-					$i++;
-					?>
-					<tr>
-						<th class="td" scope="row" colspan="2" style="text-align:<?php echo esc_attr( $text_align ); ?>; <?php echo ( 1 === $i ) ? 'border-top-width: 4px;' : ''; ?>"><?php echo wp_kses_post( $total['label'] ); ?></th>
-						<td class="td" style="text-align:<?php echo esc_attr( $text_align ); ?>; <?php echo ( 1 === $i ) ? 'border-top-width: 4px;' : ''; ?>"><?php echo wp_kses_post( $total['value'] ); ?></td>
-					</tr>
-					<?php
-				}
-			}
-			if ( $order->get_customer_note() ) {
-				?>
+
+?>
+
+<tr>
+	<td style="padding:0px 40px 0px 40px" align="center">
+		<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#C3C6C8">
+			<tbody>
 				<tr>
-					<th class="td" scope="row" colspan="2" style="text-align:<?php echo esc_attr( $text_align ); ?>;"><?php esc_html_e( 'Note:', 'woocommerce' ); ?></th>
-					<td class="td" style="text-align:<?php echo esc_attr( $text_align ); ?>;"><?php echo wp_kses_post( nl2br( wptexturize( $order->get_customer_note() ) ) ); ?></td>
+					<td style="font-size:1px;line-height:1px" height="1">
+					</td>
 				</tr>
-				<?php
-			}
-			?>
-		</tfoot>
-	</table>
-</div>
+			</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<?php
+	if (class_exists("WC_Shipment_Tracking_Actions")) {
+		$object = WC_Shipment_Tracking_Actions::get_instance();
+	}
 
-<?php do_action( 'woocommerce_email_after_order_table', $order, $sent_to_admin, $plain_text, $email ); ?>
+
+	$tracking_items = $object->get_tracking_items($order->get_id(), true);
+
+	if ($tracking_items) {
+		foreach ($tracking_items as $tracking_item) {
+			$tracking_number = $tracking_item['tracking_number'];
+			$povider = $tracking_item['formatted_tracking_provider'];
+			$link = $tracking_item['formatted_tracking_link'];
+		}
+	}
+
+	?>
+	<td style="padding:30px 40px 30px 40px" align="center">
+		<table style="display:inline" cellspacing="0" cellpadding="0" border="0" align="left">
+			<tbody>
+				<tr>
+					<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;color:#2f3132;font-size:13px;line-height:15px;font-weight:normal;padding:0px 0px 6px 0px" align="left">
+						<span style="font-weight:bold">Purchase
+							date:</span>
+						(<time datetime="<?php echo $order->get_date_created()->format('c') ?>"><?php echo wc_format_datetime($order->get_date_created()); ?></time>)
+					</td>
+				</tr>
+				<tr>
+					<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;color:#2f3132;font-size:13px;line-height:15px;font-weight:normal;padding:0px 0px 6px 0px" align="left">
+						<span style="font-weight:bold">Order
+							#</span>
+						<?php echo $before . $order->get_order_number() . $after; ?>
+					</td>
+				</tr>
+				<?php if ("customer_completed_order" === $email->id) : ?>
+					<tr>
+						<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;color:#2f3132;font-size:13px;line-height:15px;font-weight:normal;padding:0px 0px 6px 0px" align="left">
+							<span style="font-weight:bold">Tracking
+								Number
+								#</span>
+							<?php echo $tracking_number; ?>
+							(<?php echo $povider; ?>)
+						</td>
+					</tr>
+				<?php endif; ?>
+			</tbody>
+		</table>
+		<?php if ("customer_completed_order" === $email->id) : ?>
+			<table style="display:inline" cellspacing="0" cellpadding="0" border="0" align="right">
+				<tbody>
+					<tr>
+						<td align="center">
+							<table cellspacing="0" cellpadding="0" border="0">
+								<tbody>
+									<tr>
+										<td bgcolor="#e73322" align="center">
+											<a href="<?php echo $link; ?>" style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;padding:19px 36px;border:2px solid #e73322;color:#ffffff;display:inline-block;font-size:13px;font-weight:bold;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://astrogaming.narvar.com/astrogaming/tracking/15?tracking_numbers%3D941357036264%26service%3DUG%26ozip%3D11706%26dzip%3D11706%26order_number%3D165156092239&amp;source=gmail&amp;ust=1607422678058000&amp;usg=AFQjCNENpN_d129MlfaG-_8fJnxBg5GCrg">TRACK
+												YOUR
+												ORDER</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<?php endif; ?>
+
+	</td>
+</tr>
+<tr>
+	<td style="padding:0px 40px 0px 40px" align="center">
+		<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#C3C6C8">
+			<tbody>
+				<tr>
+					<td style="font-size:1px;line-height:1px" height="1">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</td>
+</tr>
+
+
+<tr>
+	<td style="padding:15px 40px 10px 40px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif" align="center">
+		<p style="font-size:12px;font-weight:bold;text-align:left;padding-bottom:5px">
+			Recently
+			Shipped
+			Items
+			:
+		</p>
+		<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#C3C6C8">
+			<tbody>
+				<tr>
+					<td style="font-size:1px;line-height:1px" height="1">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table width="100%" cellspacing="0" cellpadding="5" bgcolor="#FFFFFF">
+			<tbody>
+				<?php
+				echo wc_get_email_order_items( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$order,
+					array(
+						'show_sku'      => $sent_to_admin,
+						'show_image'    => true,
+						'image_size'    => array(100, 100),
+						'plain_text'    => $plain_text,
+						'sent_to_admin' => $sent_to_admin,
+					)
+				);
+				?>
+			</tbody>
+		</table>
+	</td>
+</tr>
+
+
+
+</tbody>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+	<tbody>
+		<tr>
+			<td style="padding:0px 40px 0px 40px" align="center">
+				<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#C3C6C8">
+					<tbody>
+						<tr>
+							<td style="font-size:1px;line-height:1px" height="1">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<?php do_action('woocommerce_email_after_order_table', $order, $sent_to_admin, $plain_text, $email); ?>

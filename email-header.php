@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Email Header
  *
@@ -15,51 +16,94 @@
  * @version 4.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 
 ?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
-		<title><?php echo get_bloginfo( 'name', 'display' ); ?></title>
-	</head>
-	<body <?php echo is_rtl() ? 'rightmargin' : 'leftmargin'; ?>="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
-		<div id="wrapper" dir="<?php echo is_rtl() ? 'rtl' : 'ltr'; ?>">
-			<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="https://www.brandcart.co.uk/wp-content/uploads/2022/07/Brand-Cart.png" type="image/x-icon">
+	<title>BrandCart</title>
+
+
+<body>
+	<div class="bodycontainer">
+		<div class="maincontent">
+			<table width=100% cellpadding=0 cellspacing=0 border=0 class="message">
 				<tr>
-					<td align="center" valign="top">
-						<div id="template_header_image">
-							<?php
-							if ( $img = get_option( 'woocommerce_email_header_image' ) ) {
-								echo '<p style="margin-top:0;"><img src="' . esc_url( $img ) . '" alt="' . get_bloginfo( 'name', 'display' ) . '" /></p>';
-							}
-							?>
-						</div>
-						<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_container">
+
+				<tr>
+					<td colspan=2>
+						<table width=100% cellpadding=12 cellspacing=0 border=0>
 							<tr>
-								<td align="center" valign="top">
-									<!-- Header -->
-									<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template_header">
-										<tr>
-											<td id="header_wrapper">
-												<h1><?php echo $email_heading; ?></h1>
-											</td>
-										</tr>
-									</table>
-									<!-- End Header -->
-								</td>
-							</tr>
-							<tr>
-								<td align="center" valign="top">
-									<!-- Body -->
-									<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_body">
-										<tr>
-											<td valign="top" id="body_content">
-												<!-- Content -->
-												<table border="0" cellpadding="20" cellspacing="0" width="100%">
-													<tr>
-														<td valign="top">
-															<div id="body_content_inner">
+								<td>
+									<div style="overflow: hidden;">
+										<font size=-1>
+											<div>
+												<div id="m_7866393457056888844ydpf922b39dyahoo_quoted_7632959596">
+													<div>
+														<div>
+															<div id="m_7866393457056888844ydpf922b39dyiv4660054999">
+																<div>
+																	<div>
+																		<div>
+																			<div dir="ltr">
+																				<div>
+																					<div style="margin:0px;padding:0px">
+																						<table width="100%" cellspacing="0" cellpadding="0" border="0">
+																							<tbody>
+																								<tr>
+																									<td width="100%" bgcolor="#F5F5F5" align="center">
+																										<table style="width:640px;min-width:640px" width="640" cellspacing="0" cellpadding="0" border="0">
+																											<tbody>
+																												<tr>
+																													<td style="width:640px;min-width:640px" width="640" align="center">
+																														<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+																															<tbody>
+																																<tr>
+																																	<td style="font-size:1px;line-height:1px;color:#ffffff" align="left">
+																																		YOUR
+																																		ORDER
+																																		HAS
+																																		SHIPPED
+																																	</td>
+																																</tr>
+																															</tbody>
+																														</table>
+																														<table width="100%" cellspacing="0" cellpadding="0" border="0">
+																															<tbody>
+																																<tr>
+																																	<td style="padding:30px 40px 30px 40px" align="center">
+																																		<table cellspacing="0" cellpadding="0" border="0" align="center">
+																																			<tbody>
+																																				<tr>
+																																					<td valign="top" align="center">
+																																						<a href="https://www.astrogaming.com" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://www.astrogaming.com&amp;source=gmail&amp;ust=1607422678058000&amp;usg=AFQjCNFv7o7rLBNDVgrslGBSJxwkpCp0yg"><img src="https://www.brandcart.co.uk/wp-content/uploads/2022/07/Brand-Cart.png" alt="logo_Name" style="display:block;width:300px;max-width:300px" border="0"></a>
+																																					</td>
+																																				</tr>
+																																			</tbody>
+																																		</table>
+																																	</td>
+																																</tr>
+																															</tbody>
+																														</table>
+																														<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+																															<tbody>
+																																<tr>
+																																	<td style="padding:40px 40px 40px 40px" align="left">
+																																		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+																																			<tbody>
+																																				<tr>
+																																					<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;color:#2f3132;font-size:36px;line-height:40px;letter-spacing:-1px;font-weight:bold;padding:0px 0px 30px 0px" valign="top" align="center">
+																																						JEFFREY,<br>YOUR
+																																						ORDER
+																																						HAS
+																																						SHIPPED
+																																					</td>
+																																				</tr>
