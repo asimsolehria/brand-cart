@@ -200,33 +200,33 @@ $additional_content = $email->get_additional_content();
 					<tbody>
 						<tr>
 							<td align="center">
+							<table cellspacing="0" cellpadding="0" border="0" align="left">
+									<tbody>
+										<tr>
+											<td style="padding:0px 10px 0px 10px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;border-right:2px solid #2f3132;white-space:nowrap" valign="middle" align="center">
+												<a href="https://www.brandcart.co.uk/contact-us/" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/contact&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNH47i0u6IEIDsacC1Iztriu37Hq8g">Contact Us</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
 								<table cellspacing="0" cellpadding="0" border="0" align="left">
 									<tbody>
 										<tr>
 											<td style="padding:0px 10px 0px 0px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;border-right:2px solid #2f3132;white-space:nowrap" valign="middle" align="center">
-												<a href="https://www.brandcart.co.uk/privacy-policy/" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/privacy&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNGJ5AfOqNoOCPcZpFc6CrC42suPLg">PRIVACY
-													+
-													SECURITY</a>
+												<a href="https://www.brandcart.co.uk/privacy-policy/" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/privacy&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNGJ5AfOqNoOCPcZpFc6CrC42suPLg">
+													Privacy Policy</a>
 											</td>
 										</tr>
 									</tbody>
 								</table>
-								<table cellspacing="0" cellpadding="0" border="0" align="left">
-									<tbody>
-										<tr>
-											<td style="padding:0px 10px 0px 10px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;border-right:2px solid #2f3132;white-space:nowrap" valign="middle" align="center">
-												<a href="https://www.brandcart.co.uk/contact-us/" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/contact&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNH47i0u6IEIDsacC1Iztriu37Hq8g">CONTACT</a>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+								
 								<table cellspacing="0" cellpadding="0" border="0" align="left">
 									<tbody>
 										<tr>
 											<td style="padding:0px 0px 0px 10px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;white-space:nowrap" valign="middle" align="center">
-												<a href="https://www.brandcart.co.uk/privacy-policy/terms" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/terms&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNFdXGoB0PhnHaDVb93gWeWWwQCZ9g">TERMS
-													OF
-													USE</a>
+												<a href="https://www.brandcart.co.uk/privacy-policy/terms" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/terms&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNFdXGoB0PhnHaDVb93gWeWWwQCZ9g">Terms & Conditions
+													
+													</a>
 											</td>
 										</tr>
 									</tbody>
