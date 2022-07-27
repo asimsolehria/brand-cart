@@ -15,10 +15,18 @@
  * @package WooCommerce\Templates\Emails
  * @version 4.0.0
  */
-
 if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
+
+// Call the global WC_Email object
+global $email;
+// Get an instance of the WC_Order object
+$order = $email->object; 
+
+$name='Dear '.$order->get_billing_first_name().',<br>';
+
+$email_heading=$name.' '.$email_heading;
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd">
@@ -84,7 +92,7 @@ if (!defined('ABSPATH')) {
 																																			<tbody>
 																																				<tr>
 																																					<td valign="top" align="center">
-																																						<a href="https://www.astrogaming.com" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://www.astrogaming.com&amp;source=gmail&amp;ust=1607422678058000&amp;usg=AFQjCNFv7o7rLBNDVgrslGBSJxwkpCp0yg"><img src="https://www.brandcart.co.uk/wp-content/uploads/2022/07/Brand-Cart.png" alt="logo_Name" style="display:block;width:300px;max-width:300px" border="0"></a>
+																																						<a href="https://www.brandcart.co.uk/" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://www.astrogaming.com&amp;source=gmail&amp;ust=1607422678058000&amp;usg=AFQjCNFv7o7rLBNDVgrslGBSJxwkpCp0yg"><img src="https://www.brandcart.co.uk/wp-content/uploads/2022/07/Brand-Cart.png" alt="logo_Name" style="display:block;width:300px;max-width:300px" border="0"></a>
 																																					</td>
 																																				</tr>
 																																			</tbody>
@@ -100,10 +108,7 @@ if (!defined('ABSPATH')) {
 																																		<table width="100%" cellspacing="0" cellpadding="0" border="0">
 																																			<tbody>
 																																				<tr>
-																																					<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;color:#2f3132;font-size:36px;line-height:40px;letter-spacing:-1px;font-weight:bold;padding:0px 0px 30px 0px" valign="top" align="center">
-																																						JEFFREY,<br>YOUR
-																																						ORDER
-																																						HAS
-																																						SHIPPED
+																																					<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;color:#2f3132;font-size:20px;line-height:40px;letter-spacing:-1px;font-weight:bold;padding:0px 0px 30px 0px" valign="top" align="center">
+																																						<?php echo $email_heading; ?>
 																																					</td>
 																																				</tr>

@@ -18,8 +18,26 @@
 
 defined('ABSPATH') || exit;
 ?>
+<?php
+global $email;
+$additional_content = $email->get_additional_content();
+
+?>
 <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
 	<tbody>
+		<tr>
+			<td align="center">
+				<?php
+				/**
+				 * Show user-defined additional content - this is set in each email's settings.
+				 */
+				if ($additional_content) {
+					echo wp_kses_post(wpautop(wptexturize($additional_content)));
+				}
+
+				?>
+			</td>
+		</tr>
 		<tr>
 			<td style="padding:30px 40px 30px 40px" align="center">
 				<table style="" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -116,7 +134,7 @@ defined('ABSPATH') || exit;
 									<tbody>
 										<tr>
 											<td align="center">
-												<a href="http://www.astrogaming.com/support" style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;padding:19px 32px;border:2px solid #ffffff;display:inline-block;font-size:13px;color:#ffffff;font-weight:bold;text-decoration:none;white-space:nowrap" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/support&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNHxQ_pD8wIORGdFKuAEqfM3_p32ow">SUPPORT</a>
+												<a href="https://www.brandcart.co.uk/contact-us/" style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;padding:19px 32px;border:2px solid #ffffff;display:inline-block;font-size:13px;color:#ffffff;font-weight:bold;text-decoration:none;white-space:nowrap" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/support&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNHxQ_pD8wIORGdFKuAEqfM3_p32ow">SUPPORT</a>
 											</td>
 										</tr>
 									</tbody>
@@ -152,17 +170,17 @@ defined('ABSPATH') || exit;
 									<tbody>
 										<tr>
 											<td width="20%" valign="middle" align="center">
-												<a href="http://astrogaming.com/facebook" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://astrogaming.com/facebook&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNHTj3GijvpdqGMLYLXeO4iHeH0p-Q"><img src="https://ci3.googleusercontent.com/proxy/T5YYryKwextGzddWBMN7W8XBEclFOX8KG-M3TszlWMZu4eSwalzHdzhiwu-xk4g7AjyKYa0zw9hLUR4x3SlvTUSiGgiDuBXu49vySpRTmDzKTCHHbS1uUh3FJ2MIgrVVWWLaC6B_9lq-jCmIqk4EB38TdmbjDXLfNcg=s0-d-e1-ft#https://drh.img.digitalriver.com/DRHM/Storefront/Site/logib2c/pb/images/notifications2019/fb_icon_b.png" alt="Facebook" style="display:block" width="12" border="0"></a>
+												<a href="https://www.facebook.com/Brand-Cart-103075295141787" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://astrogaming.com/facebook&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNHTj3GijvpdqGMLYLXeO4iHeH0p-Q"><img src="https://ci3.googleusercontent.com/proxy/T5YYryKwextGzddWBMN7W8XBEclFOX8KG-M3TszlWMZu4eSwalzHdzhiwu-xk4g7AjyKYa0zw9hLUR4x3SlvTUSiGgiDuBXu49vySpRTmDzKTCHHbS1uUh3FJ2MIgrVVWWLaC6B_9lq-jCmIqk4EB38TdmbjDXLfNcg=s0-d-e1-ft#https://drh.img.digitalriver.com/DRHM/Storefront/Site/logib2c/pb/images/notifications2019/fb_icon_b.png" alt="Facebook" style="display:block" width="12" border="0"></a>
 											</td>
 											<td width="20%" valign="middle" align="center">
-												<a href="http://astrogaming.com/instagram" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://astrogaming.com/instagram&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNHK1rgaQ_3XpwTrVe_GpzyxpH_Gxw"><img src="https://ci6.googleusercontent.com/proxy/i2Dom3tPsvbG60-8HKJtZSQRKWXMR2FzE2TC4pDV5KaNRMkiP_Gh3QkRDYX-7P6w5nVD947oOLMfL6BGNOYDis16LHAg4_8XUMg_j8AvrEwA5iAzwOCVLjNjZMwLlD63s3Ph0prFygigW-Abz6Y43h5t6fJMoEVGaGs=s0-d-e1-ft#https://drh.img.digitalriver.com/DRHM/Storefront/Site/logib2c/pb/images/notifications2019/ig_icon_b.png" alt="Instagram" style="display:block" width="26" border="0"></a>
+												<a href="https://www.instagram.com/brandcartretail/" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://astrogaming.com/instagram&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNHK1rgaQ_3XpwTrVe_GpzyxpH_Gxw"><img src="https://ci6.googleusercontent.com/proxy/i2Dom3tPsvbG60-8HKJtZSQRKWXMR2FzE2TC4pDV5KaNRMkiP_Gh3QkRDYX-7P6w5nVD947oOLMfL6BGNOYDis16LHAg4_8XUMg_j8AvrEwA5iAzwOCVLjNjZMwLlD63s3Ph0prFygigW-Abz6Y43h5t6fJMoEVGaGs=s0-d-e1-ft#https://drh.img.digitalriver.com/DRHM/Storefront/Site/logib2c/pb/images/notifications2019/ig_icon_b.png" alt="Instagram" style="display:block" width="26" border="0"></a>
 											</td>
 											<td width="20%" valign="middle" align="center">
-												<a href="http://astrogaming.com/twitter" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://astrogaming.com/twitter&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNFa8zQHnHEWVP28m0e5aGQUkwBbIw"><img src="https://ci6.googleusercontent.com/proxy/1oRkwQzGcPtvlWO1h4di_xpNDgOe3jbGANebzEReeLXPxf3kwuAqc-JBdWvQRqNfYhjPZeHIKBKWA7jyFgNj60kdCWJeoZTcZKkwhG-oD68KMCp-h5kGVxJDC732tXngO53IFLTvxd25PaXa7xiLkDXG_CG9bQavmMI=s0-d-e1-ft#https://drh.img.digitalriver.com/DRHM/Storefront/Site/logib2c/pb/images/notifications2019/tw_icon_b.png" alt="Twitter" style="display:block" width="25" border="0"></a>
+												<a href="https://twitter.com/BrandCartRetail" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://astrogaming.com/twitter&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNFa8zQHnHEWVP28m0e5aGQUkwBbIw"><img src="https://ci6.googleusercontent.com/proxy/1oRkwQzGcPtvlWO1h4di_xpNDgOe3jbGANebzEReeLXPxf3kwuAqc-JBdWvQRqNfYhjPZeHIKBKWA7jyFgNj60kdCWJeoZTcZKkwhG-oD68KMCp-h5kGVxJDC732tXngO53IFLTvxd25PaXa7xiLkDXG_CG9bQavmMI=s0-d-e1-ft#https://drh.img.digitalriver.com/DRHM/Storefront/Site/logib2c/pb/images/notifications2019/tw_icon_b.png" alt="Twitter" style="display:block" width="25" border="0"></a>
 											</td>
-											<td width="20%" valign="middle" align="center">
+											<!-- <td width="20%" valign="middle" align="center">
 												<a href="http://astrogaming.com/youtube" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://astrogaming.com/youtube&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNF3MweWsERKCGydK5WE2JXqJCJJpw"><img src="https://ci3.googleusercontent.com/proxy/CQUCTPBuBFtWhcIlwFQTIU4lvA0zxB99ShT2FkpG8vBu14kI2tiO1hHKIJzq4FxFmPPegsm7LvOTnOaD7NrURilwDs6HXBj-f3Ad0WtGhBVVc00SQO9PUl2dda0QV11DUSdh_iHF9KHEvPaABuguab4Q2sDr0pJKtW0=s0-d-e1-ft#https://drh.img.digitalriver.com/DRHM/Storefront/Site/logib2c/pb/images/notifications2019/yt_icon_b.png" alt="YouTube" style="display:block" width="25" border="0"></a>
-											</td>
+											</td> -->
 										</tr>
 									</tbody>
 								</table>
@@ -186,7 +204,7 @@ defined('ABSPATH') || exit;
 									<tbody>
 										<tr>
 											<td style="padding:0px 10px 0px 0px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;border-right:2px solid #2f3132;white-space:nowrap" valign="middle" align="center">
-												<a href="http://www.astrogaming.com/privacy" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/privacy&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNGJ5AfOqNoOCPcZpFc6CrC42suPLg">PRIVACY
+												<a href="https://www.brandcart.co.uk/privacy-policy/" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/privacy&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNGJ5AfOqNoOCPcZpFc6CrC42suPLg">PRIVACY
 													+
 													SECURITY</a>
 											</td>
@@ -197,7 +215,7 @@ defined('ABSPATH') || exit;
 									<tbody>
 										<tr>
 											<td style="padding:0px 10px 0px 10px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;border-right:2px solid #2f3132;white-space:nowrap" valign="middle" align="center">
-												<a href="http://www.astrogaming.com/contact" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/contact&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNH47i0u6IEIDsacC1Iztriu37Hq8g">CONTACT</a>
+												<a href="https://www.brandcart.co.uk/contact-us/" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/contact&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNH47i0u6IEIDsacC1Iztriu37Hq8g">CONTACT</a>
 											</td>
 										</tr>
 									</tbody>
@@ -206,7 +224,7 @@ defined('ABSPATH') || exit;
 									<tbody>
 										<tr>
 											<td style="padding:0px 0px 0px 10px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;white-space:nowrap" valign="middle" align="center">
-												<a href="http://www.astrogaming.com/terms" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/terms&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNFdXGoB0PhnHaDVb93gWeWWwQCZ9g">TERMS
+												<a href="https://www.brandcart.co.uk/privacy-policy/terms" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/terms&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNFdXGoB0PhnHaDVb93gWeWWwQCZ9g">TERMS
 													OF
 													USE</a>
 											</td>
@@ -229,13 +247,9 @@ defined('ABSPATH') || exit;
 					<tbody>
 						<tr>
 							<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:12px;color:#2f3132;line-height:16px" valign="top" align="center">
-								©
-								2020
-								Logitech.
-								All
-								rights
-								reserved.
-								The
+
+								Copyright © 2022 Brand Cart Limited. All Rights Reserved.
+								<!-- The
 								Logitech
 								logo
 								and
@@ -259,7 +273,7 @@ defined('ABSPATH') || exit;
 									Newark,
 									CA
 									94560
-									USA</a><br><br>
+									USA</a><br><br> -->
 							</td>
 						</tr>
 					</tbody>

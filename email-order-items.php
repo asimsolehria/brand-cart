@@ -94,7 +94,7 @@ foreach ($items as $item_id => $item) :
 			<table>
 				<tbody>
 					<tr>
-						<td style="line-height:14px;font-weight:bold;color:#ffffff;width:18px;min-height:18px;border-radius:50%" width="18" height="18" bgcolor="#c3c6c8" align="center">
+						<td style="line-height:14px;font-weight:bold;color:#000000;width:18px;min-height:18px;border-radius:50%" width="18" height="18"  align="center">
 							<?php
 							$qty          = $item->get_quantity();
 							$refunded_qty = $order->get_qty_refunded_for_item($item_id);
@@ -104,7 +104,7 @@ foreach ($items as $item_id => $item) :
 							} else {
 								$qty_display = esc_html($qty);
 							}
-							echo wp_kses_post(apply_filters('woocommerce_email_order_item_quantity', $qty_display, $item));
+							echo 'x'.wp_kses_post(apply_filters('woocommerce_email_order_item_quantity', $qty_display, $item));
 							?>
 						</td>
 					</tr>

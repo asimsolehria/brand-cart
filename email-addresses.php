@@ -42,7 +42,7 @@ $shipping   = $order->get_formatted_shipping_address();
 
 							<div style="max-width: 482px; background: #FFF; padding: 0px 16px; margin-bottom:8px ">
 								<div style="padding: 16px 0px; border-bottom: 1px solid #DFE0E1 ">
-									<span style="display: block; color: #4c4c4b; font-weight: 500; font-size: 14px; ">Shipping Address</span>
+									<span style="display: block; color: #000000; font-weight: bold; font-size: 14px; ">Shipping Address</span>
 								</div>
 								<span style="padding: 16px 0px; display: block; font-size: 14px; color: #808284; ">
 									<?php if (!wc_ship_to_billing_address_only() && $order->needs_shipping_address() && $shipping) : ?>
@@ -72,7 +72,7 @@ $shipping   = $order->get_formatted_shipping_address();
 
 							<div style="max-width: 482px; background: #FFF; padding: 0px 16px; margin-bottom:8px ">
 								<div style="padding: 16px 0px; border-bottom: 1px solid #DFE0E1 ">
-									<span style="display: block; color: #4c4c4b; font-weight: 500; font-size: 14px; "> Shipping Method</span>
+									<span style="display: block; color: #000000; font-weight: bold; font-size: 14px; "> Shipping Method</span>
 								</div>
 								<span style="padding: 16px 0px; display: block; font-size: 14px; color: #808284;"><span style="color: #4c4c4b "></span> <?php echo $order->get_shipping_to_display();?></span>
 							</div>
