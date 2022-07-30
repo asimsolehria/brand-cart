@@ -69,18 +69,30 @@ $shipping   = $order->get_formatted_shipping_address();
 								</span>
 							</div>
 
+							<div style="max-width: 482px; background: #FFF; padding: 0px 16px; margin-bottom:8px ">
+								<div style="padding: 16px 0px; border-bottom: 1px solid #DFE0E1 ">
+									<span style="display: block; color: #000000; font-weight: bold; font-size: 14px; "> Note </span>
+								</div>
+								<span style="padding: 16px 0px; display: block; font-size: 14px; color: #808284;"><span style="color: #4c4c4b "></span>
+									<?php if ($order->get_customer_note()) : ?>
+										<?php echo wp_kses_post(nl2br(wptexturize($order->get_customer_note()))); ?>
+
+									<?php endif; ?>
+
+								</span>
+							</div>
 
 							<div style="max-width: 482px; background: #FFF; padding: 0px 16px; margin-bottom:8px ">
 								<div style="padding: 16px 0px; border-bottom: 1px solid #DFE0E1 ">
 									<span style="display: block; color: #000000; font-weight: bold; font-size: 14px; "> Shipping Method</span>
 								</div>
-								<span style="padding: 16px 0px; display: block; font-size: 14px; color: #808284;"><span style="color: #4c4c4b "></span> <?php echo $order->get_shipping_to_display();?></span>
+								<span style="padding: 16px 0px; display: block; font-size: 14px; color: #808284;"><span style="color: #4c4c4b "></span> <?php echo $order->get_shipping_method(); ?></span>
 							</div>
 
 							<!-- summary / payment method -->
 							<div style="max-width: 482px; background: #FFF; padding: 0px 16px; margin-bottom:8px ">
 								<div style="padding: 16px 0px; border-bottom: 1px solid #DFE0E1 ">
-									<span style="display: block; color: #4c4c4b; font-weight: 500; font-size: 14px; ">Payment Summary</span>
+									<span style="display: block; color: #000000; font-weight: bold; font-size: 14px; ">Payment Summary</span>
 								</div>
 								<div style="padding: 16px 0px; border-bottom: 1px solid #DFE0E1 ">
 
@@ -97,7 +109,7 @@ $shipping   = $order->get_formatted_shipping_address();
 
 										
 										(••••)  -->
-										<?php echo $order->get_payment_method_title();?>
+										<?php echo $order->get_payment_method_title(); ?>
 									</div>
 
 									<!-- Payment Method: PayPal -->
@@ -128,23 +140,22 @@ $shipping   = $order->get_formatted_shipping_address();
 												foreach ($item_totals as $total) {
 													$i++;
 											?>
+													<?php if ($i === 2) : ?>
+														<tr>
+															<td style="padding: 4px 0px; font-family: 'Avenir Medium', arial, helvetica, sans-serif; color: #808284; font-size: 14px; ">Shipping Cost</td>
+															<td style="padding: 4px 0px; font-family: 'Avenir Medium', arial, helvetica, sans-serif; color: #4C4C4B; font-size: 14px; text-align: right; "><?php echo "£" . $order->get_shipping_total(); ?></td>
+														</tr>
+													<?php endif; ?>
+
 													<tr>
 														<td style="padding: 4px 0px; font-family: 'Avenir Medium', arial, helvetica, sans-serif; color: #808284; font-size: 14px; "><?php echo wp_kses_post($total['label']); ?></td>
 														<td style="padding: 4px 0px; font-family: 'Avenir Medium', arial, helvetica, sans-serif; color: #4C4C4B; font-size: 14px; text-align: right; "><?php echo wp_kses_post($total['value']); ?></td>
 													</tr>
 
-												<?php
+											<?php
 												}
 											}
-											if ($order->get_customer_note()) {
-												?>
-												<tr>
-													<td style="font-family: 'Avenir Medium', arial, helvetica, sans-serif; font-weight: 500; font-size: 14px; "><?php esc_html_e('Note:', 'woocommerce'); ?></td>
-													<td style="font-family: 'Avenir Medium', arial, helvetica, sans-serif; font-weight: 500; font-size: 14px; text-align: right; "><?php echo wp_kses_post(nl2br(wptexturize($order->get_customer_note()))); ?></td>
-												</tr>
 
-											<?php
-											}
 											?>
 
 

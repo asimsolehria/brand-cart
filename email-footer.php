@@ -48,17 +48,16 @@ $additional_content = $email->get_additional_content();
 
 
 							<div class="footer" style="max-width: 482px; background: #FFF; color: #808284; font-size:12px; padding: 16px;">
-								<span style="font-weight: 500; display: block; margin-bottom: 4px ">Returns</span>
-								<span style="display:block; margin-bottom: 1em ">We accept returns within 60 days of purchase. Please ensure that items are unworn, unwashed, and
-									undamaged. Note: All items must be returned with any original packaging, including any tags the item came with. Underwear outside of one return must be unopened with all seals intact. Bodysuits must have protective hygienic liner attached. Exclusions: Digital and physical gift cards cannot be returned. </span>
-								<span style="display:block; margin-bottom: 1em ">If you would like to start a return please visit your account <a href="https://link.everlane.com/click/5df6d689e7b48900293055e7/aHR0cHM6Ly93d3cuZXZlcmxhbmUuY29tL2FjY291bnQvb3JkZXJzP3Byb2ZpbGU9NWRmNWE4YzQ3YWNlNWEwZTliN2EyY2E3/5df5a8c47ace5a0e9b7a2ca7C487d3f8e" style="color: #4C4C4B; text-decoration: none ">Orders & Returns</a> page.</span>
+								<span style="font-weight: 500; display: block; margin-bottom: 4px ">Returns Key Information</span>
+								<span style="display:block; margin-bottom: 1em ">Should you not receive your order within 7 days from the purchase date or you received a faulty or damaged item please contact us via the ‘Contact Us’ page and we will investigate this with our carrier and issue a replacement or refund where appropriate. Please note that we cannot investigate any missing orders until 7 working days have passed for UK deliveries. </span>
+								<!-- <span style="display:block; margin-bottom: 1em ">If you would like to start a return please visit your account <a href="https://link.everlane.com/click/5df6d689e7b48900293055e7/aHR0cHM6Ly93d3cuZXZlcmxhbmUuY29tL2FjY291bnQvb3JkZXJzP3Byb2ZpbGU9NWRmNWE4YzQ3YWNlNWEwZTliN2EyY2E3/5df5a8c47ace5a0e9b7a2ca7C487d3f8e" style="color: #4C4C4B; text-decoration: none ">Orders & Returns</a> page.</span>
 								<span style="font-weight: 500; display: block; margin-bottom: 4px ">Contact Us</span>
 								<span style="display:block; ">
 									If you have any questions feel free to contact us at
-									<a href="mailto:support@everlane.com" style="color: #4C4C4B; text-decoration: none ">support@everlane.com</a>
+									<a href="mailto:support@everlane.com" style="color: #4C4C4B; text-decoration: none ">support@everlane.com</a> -->
 
 									<!-- Help Center -->
-									or visit our <a href="https://link.everlane.com/click/5df6d689e7b48900293055e7/aHR0cHM6Ly9zdXBwb3J0LmV2ZXJsYW5lLmNvbS9oYy9lbi11cz9wcm9maWxlPTVkZjVhOGM0N2FjZTVhMGU5YjdhMmNhNw/5df5a8c47ace5a0e9b7a2ca7B28b5dcb2" style="color: #4C4C4B; text-decoration: none">help center.</a>
+									<!-- or visit our <a href="https://link.everlane.com/click/5df6d689e7b48900293055e7/aHR0cHM6Ly9zdXBwb3J0LmV2ZXJsYW5lLmNvbS9oYy9lbi11cz9wcm9maWxlPTVkZjVhOGM0N2FjZTVhMGU5YjdhMmNhNw/5df5a8c47ace5a0e9b7a2ca7B28b5dcb2" style="color: #4C4C4B; text-decoration: none">help center.</a> -->
 								</span>
 							</div>
 
@@ -200,11 +199,12 @@ $additional_content = $email->get_additional_content();
 					<tbody>
 						<tr>
 							<td align="center">
-							<table cellspacing="0" cellpadding="0" border="0" align="left">
+								<table cellspacing="0" cellpadding="0" border="0" align="left">
 									<tbody>
 										<tr>
-											<td style="padding:0px 10px 0px 10px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;border-right:2px solid #2f3132;white-space:nowrap" valign="middle" align="center">
-												<a href="https://www.brandcart.co.uk/contact-us/" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/contact&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNH47i0u6IEIDsacC1Iztriu37Hq8g">Contact Us</a>
+											<td style="padding:0px 10px 0px 0px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;border-right:2px solid #2f3132;white-space:nowrap" valign="middle" align="center">
+												<a href="https://www.brandcart.co.uk/contact-us/" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/privacy&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNGJ5AfOqNoOCPcZpFc6CrC42suPLg">Contact Us
+													</a>
 											</td>
 										</tr>
 									</tbody>
@@ -212,20 +212,17 @@ $additional_content = $email->get_additional_content();
 								<table cellspacing="0" cellpadding="0" border="0" align="left">
 									<tbody>
 										<tr>
-											<td style="padding:0px 10px 0px 0px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;border-right:2px solid #2f3132;white-space:nowrap" valign="middle" align="center">
-												<a href="https://www.brandcart.co.uk/privacy-policy/" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/privacy&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNGJ5AfOqNoOCPcZpFc6CrC42suPLg">
-													Privacy Policy</a>
+											<td style="padding:0px 10px 0px 10px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;border-right:2px solid #2f3132;white-space:nowrap" valign="middle" align="center">
+												<a href="  https://www.brandcart.co.uk/privacy-policy/" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/contact&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNH47i0u6IEIDsacC1Iztriu37Hq8g">Privacy Policy</a>
 											</td>
 										</tr>
 									</tbody>
 								</table>
-								
 								<table cellspacing="0" cellpadding="0" border="0" align="left">
 									<tbody>
 										<tr>
 											<td style="padding:0px 0px 0px 10px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;white-space:nowrap" valign="middle" align="center">
 												<a href="https://www.brandcart.co.uk/privacy-policy/terms" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/terms&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNFdXGoB0PhnHaDVb93gWeWWwQCZ9g">Terms & Conditions
-													
 													</a>
 											</td>
 										</tr>

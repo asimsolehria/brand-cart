@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Customer refunded order email
  *
@@ -15,26 +16,74 @@
  * @version 3.7.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 /*
  * @hooked WC_Emails::email_header() Output the email header
  */
-do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
+do_action('woocommerce_email_header', $email_heading, $email); ?>
+
+
+<tr>
+	<td valign="middle" align="center">
+		<img src="https://hive.gg/wp-content/uploads/2020/12/shopping-chart-grey.png" alt="" style="display:block" width="33">
+	</td>
+	<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;color:#bfbfbf;font-size:22px;padding:0px 12px 0px 12px" valign="middle" align="center">
+		–
+	</td>
+	<td valign="middle" align="center">
+		<img src="https://hive.gg/wp-content/uploads/2020/12/card-grey.png" alt="" style="display:block" width="31">
+	</td>
+	<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;color:#bfbfbf;font-size:22px;padding:0px 12px 0px 12px" valign="middle" align="center">
+		–
+	</td>
+	<td valign="middle" align="center">
+		<img src="https://hive.gg/wp-content/uploads/2020/12/box-car-grey.png" alt="" style="display:block" width="39">
+	</td>
+	<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;color:#bfbfbf;font-size:22px;padding:0px 12px 0px 12px" valign="middle" align="center">
+		–
+	</td>
+	<td valign="middle" align="center">
+		<img src="https://hive.gg/wp-content/uploads/2020/12/box-grey.png" alt="" style="display:block" width="33">
+	</td>
+</tr>
+
+
+<tr>
+	<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;color:#2f3132;font-size:16px;line-height:20px" valign="top" align="center">
+		We are sorry that your order wasn’t right for you this time. <br> <br>
+		Visit us again to see if we can offer you something else for your needs.’
+
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
 
 <?php /* translators: %s: Customer first name */ ?>
-<p><?php printf( esc_html__( 'Hi %s,', 'woocommerce' ), esc_html( $order->get_billing_first_name() ) ); ?></p>
+<p><?php printf(esc_html__('Hi %s,', 'woocommerce'), esc_html($order->get_billing_first_name())); ?></p>
 
 <p>
-<?php
-if ( $partial_refund ) {
-	/* translators: %s: Site title */
-	printf( esc_html__( 'Your order on %s has been partially refunded. There are more details below for your reference:', 'woocommerce' ), wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES ) ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
-} else {
-	/* translators: %s: Site title */
-	printf( esc_html__( 'Your order on %s has been refunded. There are more details below for your reference:', 'woocommerce' ), wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES ) ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
-}
-?>
+	<?php
+	if ($partial_refund) {
+		/* translators: %s: Site title */
+		printf(esc_html__('Your order on %s has been partially refunded. There are more details below for your reference:', 'woocommerce'), wp_specialchars_decode(get_option('blogname'), ENT_QUOTES)); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+	} else {
+		/* translators: %s: Site title */
+		printf(esc_html__('Your order on %s has been refunded. There are more details below for your reference:', 'woocommerce'), wp_specialchars_decode(get_option('blogname'), ENT_QUOTES)); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+	}
+	?>
 </p>
 <?php
 
@@ -44,27 +93,27 @@ if ( $partial_refund ) {
  * @hooked WC_Structured_Data::output_structured_data() Outputs structured data.
  * @since 2.5.0
  */
-do_action( 'woocommerce_email_order_details', $order, $sent_to_admin, $plain_text, $email );
+do_action('woocommerce_email_order_details', $order, $sent_to_admin, $plain_text, $email);
 
 /*
  * @hooked WC_Emails::order_meta() Shows order meta data.
  */
-do_action( 'woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text, $email );
+do_action('woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text, $email);
 
 /*
  * @hooked WC_Emails::customer_details() Shows customer details
  * @hooked WC_Emails::email_address() Shows email address
  */
-do_action( 'woocommerce_email_customer_details', $order, $sent_to_admin, $plain_text, $email );
+do_action('woocommerce_email_customer_details', $order, $sent_to_admin, $plain_text, $email);
 
 /**
  * Show user-defined additional content - this is set in each email's settings.
  */
-if ( $additional_content ) {
-	echo wp_kses_post( wpautop( wptexturize( $additional_content ) ) );
+if ($additional_content) {
+	echo wp_kses_post(wpautop(wptexturize($additional_content)));
 }
 
 /*
  * @hooked WC_Emails::email_footer() Output the email footer
  */
-do_action( 'woocommerce_email_footer', $email );
+do_action('woocommerce_email_footer', $email);

@@ -20,7 +20,7 @@ defined('ABSPATH') || exit;
 
 
 ?>
-<?php do_action('woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text, $email); ?>
+<!-- <?php do_action('woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text, $email); ?> -->
 
 <?php
 if ($sent_to_admin) {
@@ -71,7 +71,7 @@ if ($sent_to_admin) {
 					<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;color:#2f3132;font-size:13px;line-height:15px;font-weight:normal;padding:0px 0px 6px 0px" align="left">
 						<span style="font-weight:bold">Purchase
 							date:</span>
-						(<time datetime="<?php echo $order->get_date_created()->format('c') ?>"><?php echo wc_format_datetime($order->get_date_created()); ?></time>)
+						(<time datetime="<?php echo $order->get_date_created()->format('c') ?>"><?php echo wc_format_datetime($order->get_date_created(), "d M Y"); ?></time>)
 					</td>
 				</tr>
 				<tr>
@@ -130,13 +130,16 @@ if ($sent_to_admin) {
 		</table>
 	</td>
 </tr>
+<?php
+$title = $email->id === "customer_processing_order" ? "Purchased" : "Shipped";
 
+?>
 
 <tr>
 	<td style="padding:15px 40px 10px 40px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif" align="center">
 		<p style="font-size:12px;font-weight:bold;text-align:left;padding-bottom:5px">
 			Recently
-			Shipped
+			<?php echo $title; ?>
 			Items
 			:
 		</p>

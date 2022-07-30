@@ -61,19 +61,9 @@ do_action('woocommerce_email_header', $email_heading, $email); ?>
 </tr>
 <tr>
 	<td style="font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;color:#2f3132;font-size:16px;line-height:20px" valign="top" align="center">
-		Good
-		news!
-		Your
-		product
-		should
-		arrive
-		shortly.<br><br>Track
-		it
-		anytime
-		using
-		the
-		link
-		below.
+		Great News! Your order should arrive shortly. <br> <br>
+		Track it anytime using the link below.
+
 	</td>
 </tr>
 </tbody>
@@ -101,12 +91,6 @@ do_action('woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text, $
  */
 do_action('woocommerce_email_customer_details', $order, $sent_to_admin, $plain_text, $email);
 
-/**
- * Show user-defined additional content - this is set in each email's settings.
- */
-if ($additional_content) {
-	echo wp_kses_post(wpautop(wptexturize($additional_content)));
-}
 
 /*
  * @hooked WC_Emails::email_footer() Output the email footer
