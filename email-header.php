@@ -22,11 +22,11 @@ if (!defined('ABSPATH')) {
 // Call the global WC_Email object
 global $email;
 // Get an instance of the WC_Order object
-$order = $email->object; 
+$order = $email->object;
 
-$name='Dear '.$order->get_billing_first_name().',<br>';
+$name = 'Dear ' . $order->get_billing_first_name() . ',<br>';
 
-$email_heading=$name.' '.$email_heading;
+$email_heading = $name . ' ' . $email_heading;
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd">

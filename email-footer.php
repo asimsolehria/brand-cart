@@ -56,8 +56,8 @@ $additional_content = $email->get_additional_content();
 									If you have any questions feel free to contact us at
 									<a href="mailto:support@everlane.com" style="color: #4C4C4B; text-decoration: none ">support@everlane.com</a> -->
 
-									<!-- Help Center -->
-									<!-- or visit our <a href="https://link.everlane.com/click/5df6d689e7b48900293055e7/aHR0cHM6Ly9zdXBwb3J0LmV2ZXJsYW5lLmNvbS9oYy9lbi11cz9wcm9maWxlPTVkZjVhOGM0N2FjZTVhMGU5YjdhMmNhNw/5df5a8c47ace5a0e9b7a2ca7B28b5dcb2" style="color: #4C4C4B; text-decoration: none">help center.</a> -->
+								<!-- Help Center -->
+								<!-- or visit our <a href="https://link.everlane.com/click/5df6d689e7b48900293055e7/aHR0cHM6Ly9zdXBwb3J0LmV2ZXJsYW5lLmNvbS9oYy9lbi11cz9wcm9maWxlPTVkZjVhOGM0N2FjZTVhMGU5YjdhMmNhNw/5df5a8c47ace5a0e9b7a2ca7B28b5dcb2" style="color: #4C4C4B; text-decoration: none">help center.</a> -->
 								</span>
 							</div>
 
@@ -204,7 +204,7 @@ $additional_content = $email->get_additional_content();
 										<tr>
 											<td style="padding:0px 10px 0px 0px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;border-right:2px solid #2f3132;white-space:nowrap" valign="middle" align="center">
 												<a href="https://www.brandcart.co.uk/contact-us/" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/privacy&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNGJ5AfOqNoOCPcZpFc6CrC42suPLg">Contact Us
-													</a>
+												</a>
 											</td>
 										</tr>
 									</tbody>
@@ -223,7 +223,7 @@ $additional_content = $email->get_additional_content();
 										<tr>
 											<td style="padding:0px 0px 0px 10px;font-family:Geogrotesque,Arial,Verdana,Helvetica,sans-serif;font-size:14px;color:#2f3132;line-height:18px;font-weight:bold;white-space:nowrap" valign="middle" align="center">
 												<a href="https://www.brandcart.co.uk/privacy-policy/terms" style="color:#2f3132;text-decoration:none" rel="noreferrer noopener" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.astrogaming.com/terms&amp;source=gmail&amp;ust=1607422678059000&amp;usg=AFQjCNFdXGoB0PhnHaDVb93gWeWWwQCZ9g">Terms & Conditions
-													</a>
+												</a>
 											</td>
 										</tr>
 									</tbody>
